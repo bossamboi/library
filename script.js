@@ -1,5 +1,30 @@
-let myLibrary = [];
+const submit = document.querySelector('#submit');
+const titleInput = document.querySelector('#title-input');
+const authorInput = document.querySelector('#author-input');
+const pagesInput = document.querySelector('#pages-input');
+const statusInput = document.querySelector('#status-box');
 
+submit.addEventListener('click', () => {
+    if (titleInput.value == "" || authorInput.value == "" || pagesInput.value == "") {
+        alert("Please fill out all entries.")
+    } else {
+        addBookToLibrary(titleInput.value, authorInput.value, parseInt(pagesInput.value), statusInput.checked);
+        displayBooks();
+        clearInputs();
+    }
+
+})
+
+function clearInputs() {
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    statusInput.checked = false;
+}
+
+
+
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title

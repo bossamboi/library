@@ -3,17 +3,41 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Eric's Library</title>
   <meta name="Eric Sohng" content="">
-  <meta name="library" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="" content="">
+  <meta name="" content="width=device-width, initial-scale=1">
 
   <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <p>Hello, world!</p>
+  <h1>Eric's Library</h1>
+
+  <div id="input-div">
+    <label for="title" id="title-label">Title:</label>
+    <input type="text" id="title-input" name="title">
+    <label for="author" id="author-label">Author:</label>
+    <input type="text" id="author-input" name="author">
+    <label for="pages" id="pages-label">Pages:</label>
+    <input type="text" id="pages-input" name="pages">
+    <input type="checkbox" id="status-box" name="status">
+    <label for="status" id="status-label">Read</label>
+    <button id="submit"><span>Add Book </span></button>
+    
+  </div>
+
+
+  <div id="container">
+    <div id="headings" class="list-class"> 
+        <div id="heading-title" class="h-title-class">Title</div>
+        <div id="heading-author" class="h-author-class">Author</div>
+        <div id="heading-pages" class="h-pages-class">Pages</div>
+        <div id="heading-status"class="h-status-class">Status</div>
+    </div>
+
+  </div>
 
   <script src="script.js"></script>
 </body>

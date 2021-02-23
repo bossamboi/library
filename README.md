@@ -1,0 +1,1 @@
+The objective of "Library" is to use the basics of objects, constructors, and prototypes to create a simple web-based log of books that have been read or are to be read.

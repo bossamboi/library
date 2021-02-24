@@ -9,11 +9,13 @@
   <meta name="" content="width=device-width, initial-scale=1">
 
   <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-  <h1>Eric's Library</h1>
+  <div id="heading">Eric's Library</div>
 
   <div id="input-div">
     <label for="title" id="title-label">Title:</label>
@@ -25,18 +27,23 @@
     <input type="checkbox" id="status-box" name="status">
     <label for="status" id="status-label">Read</label>
     <button id="submit"><span>Add Book </span></button>
-    
+
   </div>
 
 
-  <div id="container">
-    <div id="headings" class="list-class"> 
-        <div id="heading-title" class="h-title-class">Title</div>
-        <div id="heading-author" class="h-author-class">Author</div>
-        <div id="heading-pages" class="h-pages-class">Pages</div>
-        <div id="heading-status"class="h-status-class">Status</div>
+  <div>
+    <div id="headings" class="list-class">
+      <div id="heading-title" class="h-title-class">Title</div>
+      <div id="heading-author" class="h-author-class">Author</div>
+      <div id="heading-pages" class="h-pages-class">Pages</div>
+      <div id="heading-status" class="h-status-class">Status</div>
+      <i id="heading-delete" class="fa fa-trash h-delete-class"></i>
+    </div>
+    <div id="container">
+      
     </div>
   </div>
+
 
   <script src="script.js"></script>
 </body>

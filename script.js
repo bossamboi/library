@@ -3,17 +3,28 @@ const titleInput = document.querySelector('#title-input');
 const authorInput = document.querySelector('#author-input');
 const pagesInput = document.querySelector('#pages-input');
 const statusInput = document.querySelector('#status-box');
+const container = document.querySelector('#container');
+const deleteAll = document.querySelector('#heading-delete');
+
+deleteAll.addEventListener('click', () => {
+    clearBooks();
+    myLibrary = [];
+})
+
 
 submit.addEventListener('click', () => {
     if (titleInput.value == "" || authorInput.value == "" || pagesInput.value == "") {
         alert("Please fill out all entries.")
     } else {
         addBookToLibrary(titleInput.value, authorInput.value, parseInt(pagesInput.value), statusInput.checked);
+        clearBooks();
         displayBooks();
         clearInputs();
     }
 
 })
+
+
 
 function clearInputs() {
     titleInput.value = "";
@@ -42,14 +53,57 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBooks() {
     for (let i = 0; i < myLibrary.length; i++) {
-        // create or add div to body of html
-        // assigns book display class
-        //
+        let bookLine = document.createElement('div');
+        bookLine.classList.add('list-class');
+
+        let bookTitle = document.createElement('div');
+        bookTitle.textContent = myLibrary[i].title;
+        bookTitle.classList.add('h-title-class');
+
+        let bookAuthor = document.createElement('div');
+        bookAuthor.textContent = myLibrary[i].author;
+        bookAuthor.classList.add('h-author-class');
+
+        let bookPages = document.createElement('div');
+        bookPages.textContent = myLibrary[i].pages;
+        bookPages.classList.add('h-pages-class');
+
+        let bookStatus = document.createElement('div');
+        myLibrary[i].read === true ? bookStatus.textContent = 'Read' : bookStatus.textContent = "Unread";
+        bookStatus.classList.add('h-status-class');
+        bookStatus.addEventListener('click', () => {
+            if (bookStatus.textContent === 'Read') {
+                bookStatus.textContent = 'Unread';
+                myLibrary[i].read = false;
+            } else if (bookStatus.textContent === 'Unread') {
+                bookStatus.textContent = 'Read';
+                myLibrary[i].read = true;
+            }
+
+        })
+
+        let bookDelete = document.createElement('i');
+        bookDelete.classList.add('fa', 'fa-trash', 'h-delete-class');
+        bookDelete.addEventListener('click', () => {
+            bookLine.remove();
+            myLibrary.splice(i, 1);
+
+        })
+
+
+        bookLine.appendChild(bookTitle);
+        bookLine.appendChild(bookAuthor);
+        bookLine.appendChild(bookPages);
+        bookLine.appendChild(bookStatus);
+        bookLine.appendChild(bookDelete);
+        container.appendChild(bookLine);
+    }
+}
+
+function clearBooks() {
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
     }
 }
 
 
-// sample book below for css help
-addBookToLibrary("title", "author", 394, true);
-addBookToLibrary("the hobbit", "jrr tolkien", 429, false);
-addBookToLibrary("The Witch & the Wardrobe", "Stephen King", 222, true);

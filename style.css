@@ -1,12 +1,13 @@
-h1 {
+#heading {
     width: 960px;
     height: 60px;
     text-align: justify;
     color: rgb(69, 69, 69);
-    margin-top: 80px;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+    margin-bottom: 20px;
+    padding: 0px;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: lighter;
     font-size: 60px;
@@ -147,16 +148,27 @@ h1 {
     font-size: 17px;
     grid-gap: 5px;
     border-style: solid;
-    border-top: rgb(69, 69, 69);
-    border-right: rgb(69, 69, 69);
-    border-left: rgb(69, 69, 69);
-    border-width: 1px;
+    border-color: rgb(189, 189, 189);
+    border-top-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
 }
 
 #headings {
     margin-top: 50px;
     font-size: 20px;
     font-weight: bold;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    z-index: 3;
+    border-color: black;
 }
 
 .h-title-class {
@@ -169,8 +181,25 @@ h1 {
 
 .h-pages-class {
     grid-column: 5/6;
+
 }
 
 .h-status-class {
     grid-column: 6/7;
+    grid-row: 1/2;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.h-delete-class {
+    grid-column: 6/7;
+    grid-row: 1/2;
+    z-index: 3;
+    height: 20px;
+    width: 20px;
+    margin-left: 130px;
+}
+
+.fa {
+    cursor: pointer;
 }

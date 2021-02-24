@@ -9,7 +9,7 @@ const deleteAll = document.querySelector('#heading-delete');
 deleteAll.addEventListener('click', () => {
     clearBooks();
     myLibrary = [];
-})
+});
 
 
 submit.addEventListener('click', () => {
@@ -22,9 +22,37 @@ submit.addEventListener('click', () => {
         clearInputs();
     }
 
-})
+});
+
+titleInput.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        submit.click();        
+    }
+});
+
+authorInput.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        submit.click();        
+    }
+});
+
+pagesInput.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        submit.click();        
+    }
+});
 
 
+
+statusInput.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        submit.click();        
+    }
+});
 
 function clearInputs() {
     titleInput.value = "";
@@ -79,7 +107,6 @@ function displayBooks() {
                 bookStatus.textContent = 'Read';
                 myLibrary[i].read = true;
             }
-
         })
 
         let bookDelete = document.createElement('i');

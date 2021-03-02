@@ -65,11 +65,22 @@ function clearInputs() {
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+// USING PLAIN OBJECT CONSTRUCTOR
+// function Book(title, author, pages, read) {
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     this.read = read
+// }
+
+// USING class OBJECT CONSTRUCTOR
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 
